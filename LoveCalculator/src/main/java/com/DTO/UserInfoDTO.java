@@ -1,7 +1,6 @@
 package com.DTO;
 
 import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -15,7 +14,16 @@ public class UserInfoDTO {
 	@AssertTrue(message = "you have to agree terms and conditions")
 
 	private boolean termsAndConditions;
+	private String result;
 	
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
 
 	public boolean isTermsAndConditions() {
 		return termsAndConditions;

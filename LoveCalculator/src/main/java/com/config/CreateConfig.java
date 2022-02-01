@@ -2,9 +2,13 @@ package com.config;
 
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -16,7 +20,7 @@ import formatter.phoneNumberFormatter;
 
 @EnableWebMvc
 @Configuration()
-@ComponentScan(basePackages = "com.controller")
+@ComponentScan(basePackages= {"com.controller","service"})
 public class CreateConfig implements WebMvcConfigurer {
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
@@ -30,17 +34,20 @@ public class CreateConfig implements WebMvcConfigurer {
 	@Bean
 	public JavaMailSender getJavaMailSender() {
 
-		JavaMailSenderImpl javaMailsender= new JavaMailSenderImpl();
-		javaMailsender.setHost("smtp.gmail.com");
-		javaMailsender.setUsername("devuduboya@gmail.com");
-		javaMailsender.setPassword("0987667890");
-		javaMailsender.setPort(587);
+		JavaMailSenderImpl javaMailSenderImpl= new JavaMailSenderImpl();
+		
+		javaMailSenderImpl.setHost("smtp.gmail.com");
+		javaMailSenderImpl.setUsername("devuduboya@gmail.com");
+		javaMailSenderImpl.setPassword("0987667890");
+		javaMailSenderImpl.setPort(587);
 
 		Properties mailproperties = new Properties();
 		mailproperties.put("mail.smtp.starttls.enable", true);
 		mailproperties.put("mail.smtp.ssl.trust","smtp.gmail.com");
-		javaMailsender.setJavaMailProperties(mailproperties);
-		return javaMailsender;
+		
+		javaMailSenderImpl.setJavaMailProperties(mailproperties);
+		
+		return javaMailSenderImpl;
 	}
 
 	@Override

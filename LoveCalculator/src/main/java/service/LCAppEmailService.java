@@ -1,6 +1,6 @@
 package service;
 
- interface LCAppEmailService {
+ public interface LCAppEmailService {
   void sendEmail(String userName,String userEmail,String result);
 
 }

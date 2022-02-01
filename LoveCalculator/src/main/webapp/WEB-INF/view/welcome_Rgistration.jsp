@@ -61,7 +61,7 @@ FEMALE<form:radiobutton path="gender" value="female"/>
 </p>
 <p>
 <h3>Communication</h3>
-</p>
+
 <p>
 <label> EMAIL</label>
 <form:input path="communicationDto.email"/>

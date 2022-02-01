@@ -11,7 +11,7 @@
 <h2>love calculator results are :</h2>
 <p>
 
-user ${userinfo.userName} and ${userinfo.crushName}  both are : FRIENDS
+user ${userinfo.userName} and ${userinfo.crushName}  both are :${userinfo.result}
 </p>
 
 <a href="/LoveCalculator/sendEmail">send your result to Email</a>

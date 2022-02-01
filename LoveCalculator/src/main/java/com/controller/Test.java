@@ -2,12 +2,11 @@ package com.controller;
 
 import java.util.List;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.DTO.UserInfoDTO;
+
+import service.LCAppService;
 @SessionAttributes("userinfo")
 @Controller
 public class Test {
+	@Autowired
+	private LCAppService lcAppservice;
 
 	@RequestMapping("/")
 	public String UserHomepage(Model model) {
@@ -55,8 +58,11 @@ public class Test {
 		response.addCookie(usercookie);*/
 		// writing session insted of cookie... in method also we user httpservletResponse response for cookies...
 	HttpSession session = request.getSession();
-	session.setAttribute("userName",UserinfoDto.getUserName());
-		 
+	session.setAttribute("userName",UserinfoDto.getUserName());  
+	
+	
+	String appresult =lcAppservice.CalculateLove(UserinfoDto.getUserName(),UserinfoDto.getCrushName());
+	UserinfoDto.setResult(appresult);
 		return "Display-details";
 	}
 }

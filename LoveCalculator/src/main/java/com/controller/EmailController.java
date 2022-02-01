@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import com.DTO.EmailDTO;
 import com.DTO.UserInfoDTO;
 
-import service.LcAppEmailServiceImpl;
+import service.LCAppEmailServiceImpl;
 
 @Controller
 public class EmailController {
 
 	@Autowired
-	private LcAppEmailServiceImpl lcAppEmailService;
+	private LCAppEmailServiceImpl lcAppEmailService;
 
 	@RequestMapping("/sendEmail")
 	public String sendEmail(Model model) {
@@ -39,7 +39,7 @@ public class EmailController {
 		 * newuserName=" Mr " +userName; model.addAttribute("userName",newuserName);
 		 */
 		// calling sendEmail method from lcappEmailservice
-		lcAppEmailService.sendEmail(UserinfoDto.getUserName(),emailDto.getUserEmail(),"FRIEND");
+		lcAppEmailService.sendEmail(UserinfoDto.getUserName(),emailDto.getUserEmail(),UserinfoDto.getResult());
 		return "Process-Email-Page";
 	}
 

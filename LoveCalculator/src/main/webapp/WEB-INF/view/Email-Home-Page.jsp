@@ -10,7 +10,7 @@
 <body>
 	<h1> Hi ${userName} </h1>
 	<h2> WELCOME TO LOVE CALCULATOR</h2>
-	<form:form action="getinfo" modelAttribute="emailDto" method="post">
+	<form:form action="proces-email" modelAttribute="emailDto" method="post">
 		<label> Enter your Email</label>
 		<form:input path="userEmail" />
 		<input type="submit" value="send" />
