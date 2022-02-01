@@ -1,0 +1,15 @@
+D:\STS\LoveCalculator\src\main\java\com\controller\Test.java
+D:\STS\LoveCalculator\src\main\java\com\config\DSConfig.java
+D:\STS\LoveCalculator\src\main\java\Validators\userNameVallidator.java
+D:\STS\LoveCalculator\src\main\java\com\DTO\RegistrationDTO.java
+D:\STS\LoveCalculator\src\main\java\com\config\CreateConfig.java
+D:\STS\LoveCalculator\src\main\java\service\LcAppEmailServiceImpl.java
+D:\STS\LoveCalculator\src\main\java\com\DTO\communicationDTO.java
+D:\STS\LoveCalculator\src\main\java\com\DTO\Phone.java
+D:\STS\LoveCalculator\src\main\java\service\LCAppEmailService.java
+D:\STS\LoveCalculator\src\main\java\com\DTO\UserInfoDTO.java
+D:\STS\LoveCalculator\src\main\java\com\DTO\EmailDTO.java
+D:\STS\LoveCalculator\src\main\java\formatter\phoneNumberFormatter.java
+D:\STS\LoveCalculator\src\main\java\com\controller\EmailController.java
+D:\STS\LoveCalculator\src\main\java\customEditors\NamePropertyEditor.java
+D:\STS\LoveCalculator\src\main\java\com\controller\RegisterController.java
